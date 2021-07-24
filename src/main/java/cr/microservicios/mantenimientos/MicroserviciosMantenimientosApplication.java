@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
-@EntityScan({ "edymar.microservicios.commons.entity" })
+@EntityScan({ "cr.microservicios.commons.entity" })
 public class MicroserviciosMantenimientosApplication {
 
 	public static void main(String[] args) {
