@@ -1,6 +1,7 @@
 package cr.microservicios.mantenimientos.controller;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,16 +10,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("msg")
 public class MensajesController {
 
-	/*@RequestMapping(method = { RequestMethod.OPTIONS,
-			RequestMethod.GET }, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> prueba(@RequestBody Object data) {
-		//System.out.println(data.toString());
-		return ResponseEntity.ok("test");
-	}*/
-	
+	/*
+	 * @RequestMapping(method = { RequestMethod.OPTIONS, RequestMethod.GET },
+	 * consumes = MediaType.APPLICATION_JSON_VALUE, produces =
+	 * MediaType.APPLICATION_JSON_VALUE) public ResponseEntity<?>
+	 * prueba(@RequestBody Object data) { //System.out.println(data.toString());
+	 * return ResponseEntity.ok("test"); }
+	 */
+
 	@GetMapping("/test")
+	@PreAuthorize("hasRole('ROLE_group1')")
 	public ResponseEntity<?> prueba() {
-		//System.out.println(data.toString());
+		// System.out.println(data.toString());
 		return ResponseEntity.ok("test");
 	}
 
