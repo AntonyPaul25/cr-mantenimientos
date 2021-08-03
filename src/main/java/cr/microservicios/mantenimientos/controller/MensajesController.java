@@ -19,7 +19,7 @@ public class MensajesController {
 	 */
 
 	@GetMapping("/test")
-	@PreAuthorize("hasRole('ROLE_group1')")
+	//@PreAuthorize("hasRole('ROLE_group1')")
 	public ResponseEntity<?> prueba() {
 		// System.out.println(data.toString());
 		return ResponseEntity.ok("test");
