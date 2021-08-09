@@ -23,6 +23,7 @@ import org.springframework.http.ResponseEntity;
 //import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -33,17 +34,14 @@ public class MensajesController {
 	// @Autowired
 	RestTemplate restTemplate;
 
-	/*
-	 * @RequestMapping(method = { RequestMethod.OPTIONS, RequestMethod.GET },
-	 * consumes = MediaType.APPLICATION_JSON_VALUE, produces =
-	 * MediaType.APPLICATION_JSON_VALUE) public ResponseEntity<?>
-	 * prueba(@RequestBody Object data) { //System.out.println(data.toString());
-	 * return ResponseEntity.ok("test"); }
-	 */
+	@RequestMapping("/test2")
+	public ResponseEntity<?> prueba2() { // System.out.println(data.toString());
+		return ResponseEntity.ok("test");
+	}
 
 	@GetMapping("/test")
 	// @PreAuthorize("hasRole('ROLE_group1')")
-	public ResponseEntity<?> prueba() throws ClientProtocolException, IOException {
+	public ResponseEntity<?> prueba() {
 
 		/*
 		 * String url = "http://example.org/path/to/api"; String response =
